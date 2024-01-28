@@ -28,8 +28,6 @@ model StockLevels {
 
     actions {
         create createStockLevel() with (product.sku, warehouse.code) @function 
-        create createStockLevel2() with (product.id, warehouse.id, date, available) 
-
     }
 
     @permission(expression: ctx.isAuthenticated, actions: [create])
@@ -48,4 +46,8 @@ model Warehouse {
 
     @permission(expression: ctx.isAuthenticated, actions: [create, list])
 
+}
+
+job StockTracker {
+    @schedule("*/1 * * * *")
 }
