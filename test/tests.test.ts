@@ -11,8 +11,8 @@ test("create action - audit table populated", async () => {
     await models.product.create({sku: "RL-AA076", title: "MB102 Breadboard Power Supply Module 3.3V/5V"});
 
     await jobs.stockTracker();
-
     await jobs.stockTracker();
-    
-    console.log(await models.stockLevels.findMany());
+
+    const levels = await models.stockLevels.findMany();
+    expect(levels).toHaveLength(4);
 });
