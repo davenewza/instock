@@ -1,0 +1,51 @@
+model Product {
+    fields {
+        sku Text @unique
+        title Text
+        isActive Boolean @default(true)
+    }
+
+    actions {
+        create createProduct() with (sku, title) {
+            @permission(expression: ctx.isAuthenticated)
+        }
+        list listProducts() {
+            @permission(expression: ctx.isAuthenticated)
+        }
+        write refreshProducts(Any) returns (Any) {
+            @permission(expression: ctx.isAuthenticated)
+        }
+    }
+}
+
+model StockLevels {
+    fields {
+        date Date
+        product Product
+        warehouse Warehouse
+        available Number
+    }
+
+    actions {
+        create createStockLevel() with (product.sku, warehouse.code) @function 
+        create createStockLevel2() with (product.id, warehouse.id, date, available) 
+
+    }
+
+    @permission(expression: ctx.isAuthenticated, actions: [create])
+}
+
+model Warehouse {
+    fields {
+        name Text
+        code Text @unique
+    }
+
+    actions {
+        create createWarehouse() with (name, code)
+        list listWarehouses()
+    }
+
+    @permission(expression: ctx.isAuthenticated, actions: [create, list])
+
+}

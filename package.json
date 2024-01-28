@@ -1,0 +1,17 @@
+{
+  "name": "instock",
+  "dependencies": {
+    "@teamkeel/functions-runtime": "^0.377.1",
+    "@teamkeel/testing-runtime": "^0.377.1",
+    "@types/lodash": "^4.14.202",
+    "kysely": "^0.23.5",
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "tsx": "^3.12.6",
+    "typescript": "^5.3.3",
+    "vitest": "^0.34.6"
+  }
+}
