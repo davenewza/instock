@@ -49,5 +49,8 @@ model Warehouse {
 }
 
 job StockTracker {
-    @schedule("*/1 * * * *")
+    // Every 30 minutes
+    @schedule("*/30 * * * *")
+    // Manual trigger
+    @permission(expression: ctx.isAuthenticated)
 }
