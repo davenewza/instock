@@ -3,4 +3,4 @@ environment:
 
 # Visit https://docs.keel.so/secrets for more information about secrets
 secrets:
- - name: TAKEALOT_API_KEY
+  - name: TAKEALOT_API_KEY
