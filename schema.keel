@@ -18,6 +18,7 @@ model Product {
     }
 }
 
+
 model StockLevels {
     fields {
         date Date
