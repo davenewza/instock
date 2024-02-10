@@ -29,10 +29,11 @@ model StockLevels {
 
     actions {
         create createStockLevel() with (product.sku, warehouse.code) @function 
+        list listStockLevels(date?, warehouse.code?, product.sku)
     }
 
     @unique([product, warehouse, date])
-    @permission(expression: ctx.isAuthenticated, actions: [create])
+    @permission(expression: ctx.isAuthenticated, actions: [create, list])
 }
 
 model Warehouse {

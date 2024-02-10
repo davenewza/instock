@@ -1,8 +1,8 @@
 {
   "name": "instock",
   "dependencies": {
-    "@teamkeel/functions-runtime": "^0.377.1",
-    "@teamkeel/testing-runtime": "^0.377.1",
+    "@teamkeel/functions-runtime": "^0.379.0",
+    "@teamkeel/testing-runtime": "^0.379.0",
     "@types/lodash": "^4.14.202",
     "kysely": "^0.23.5",
     "lodash": "^4.17.21",
