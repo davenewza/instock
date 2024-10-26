@@ -53,6 +53,8 @@ model Warehouse {
 
 }
 
+
+
 job StockTracker {
     // Every 30 minutes
     @schedule("*/30 * * * *")
